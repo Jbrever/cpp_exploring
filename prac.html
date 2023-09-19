@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// const callingclsobj1 = new clsobj1("fayyaz", "urrehman")
+// console.log(callingclsobj1);
+// console.log(callingclsobj1.fname + callingclsobj1.lname);
+// class => class is a blue print of object
+// constructer is a method of class every class haveonly one constructer method
+
+// class clsobj1 {
+//     constructor(fname, lname) {
+//         this.fname = fname,
+//             this.lname = lname
+//         return lname + fname
+//     }
+// }
+// const callingclsobj1 = new clsobj1("fayyaz", "urrehman")
+// console.log(callingclsobj1);
+// console.log(callingclsobj1.fname + callingclsobj1.lname);
+
+class clsinhertence {
+    constructor(fname, lname) {
+        this.fname = fname
+        this.lname = lname
+    }
+}
+class childclsinhertece extends clsinhertence { }
+class childchildclsinhertece extends childclsinhertece { }
+
+const called = new clsinhertence('fayyaz', 'urrehman')
+const calledchild = new childclsinhertece('danish', 'chouhan')
+const calledchildchild = new childchildclsinhertece('adnan', 'khilji')
+console.log(called);
+console.log(calledchild);
+console.log(calledchildchild);
+
+</script>
+</html>
