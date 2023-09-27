@@ -10,7 +10,7 @@ int factorial(int num){
     }
 
      result=num*factorial(num-1);
-       return result;
+     return result;
 }
 
 int main(){
