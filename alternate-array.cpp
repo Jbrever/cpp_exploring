@@ -14,7 +14,6 @@ int main()
     while (i < size)
     {
         cin >> array[i];
-
         i++;
     }
 
