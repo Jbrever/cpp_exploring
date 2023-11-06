@@ -39,6 +39,7 @@ public:
     void num2LftTriangle();
     void num3LftTriangle();
     void strPiramidTriangle();
+    void strRevPiramidTriangle();
 };
 
 void pattern::square()
@@ -69,16 +70,20 @@ void pattern::strLftTriangle()
     }
 }
 
-void pattern::strRevLftTriangle(){
-    	for(int i=0;i<size;i++){
-		for(int j=0 ; j<size-i ;j++){
-               cout<<"* ";
-		}
-		cout<<endl;
-	}
+void pattern::strRevLftTriangle()
+{
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size - i; j++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
 }
 
-void pattern::num1LftTriangle(){
+void pattern::num1LftTriangle()
+{
     for (int i = 0; i < size; i++)
     {
         for (int j = 0; j <= i; j++)
@@ -101,26 +106,51 @@ void pattern::num2LftTriangle()
     }
 }
 
-void pattern::num3LftTriangle(){
-    for(int i=0; i<size;i++){
-        for(int j=0;j< size-i; j++){
-           cout<<j+1<<" ";
-        } 
-        cout<<endl;
-     }
+void pattern::num3LftTriangle()
+{
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size - i; j++)
+        {
+            cout << j + 1 << " ";
+        }
+        cout << endl;
+    }
 }
 
-void pattern::strPiramidTriangle(){
-        int c = 0;
-    for(int i=0;i<size;i++){
-        for(int space=0; space<size-(i+1) ; space++){
-            cout<<" ";
+void pattern::strPiramidTriangle()
+{
+    int c = 0;
+    for (int i = 0; i < size; i++)
+    {
+        for (int space = 0; space < size - (i + 1); space++)
+        {
+            cout << " ";
         }
-        for(int j=0; j<=c;j++){
-            cout<<"*";
+        for (int j = 0; j <= c; j++)
+        {
+            cout << "*";
         }
-        cout<<endl;
-        c = c+2;
+        cout << endl;
+        c = c + 2;
+    }
+}
+
+void pattern::strRevPiramidTriangle()
+{
+    int c = size * 2 - 1;
+    for (int i = 0; i < size; i++)
+    {
+        for (int space = 0; space < i; space++)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j < c; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+        c = c - 2;
     }
 }
 
@@ -133,6 +163,6 @@ int main()
         cout << "enter size-: ";
         cin >> size;
         pattern n(size);
-        n.num3LftTriangle();
+        n.strRevPiramidTriangle();
     }
 }
