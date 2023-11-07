@@ -40,6 +40,7 @@ public:
     void num3LftTriangle();
     void strPiramidTriangle();
     void strRevPiramidTriangle();
+    void strDaimond();
 };
 
 void pattern::square()
@@ -154,6 +155,38 @@ void pattern::strRevPiramidTriangle()
     }
 }
 
+void pattern::strDaimond(){
+   int c = 0;
+    for (int i = 0; i < size; i++)
+    {
+        for (int space = 0; space < size - (i + 1); space++)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j <= c; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+        c = c + 2;
+    }
+
+    int a = size * 2 - 1;
+    for (int i = 0; i < size; i++)
+    {
+        for (int space = 0; space < i; space++)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j < a; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+        a = a - 2;
+    }
+}
+
 int main()
 {
     int t = 3;
@@ -163,6 +196,6 @@ int main()
         cout << "enter size-: ";
         cin >> size;
         pattern n(size);
-        n.strRevPiramidTriangle();
+        n.strDaimond();
     }
 }
