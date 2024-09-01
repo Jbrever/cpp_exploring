@@ -11,7 +11,7 @@ public:
 
    alfa()
    {
-      cout << "consturtor called" << endl;
+      cout << "consturtor called" << endl;  
    }
 
    // parameterised consturctor(

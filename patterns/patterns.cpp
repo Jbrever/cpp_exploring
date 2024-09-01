@@ -38,9 +38,12 @@ public:
     void num1LftTriangle();
     void num2LftTriangle();
     void num3LftTriangle();
+    void num4LftTriangle();
+    void num5TwoOpposite();
     void strPiramidTriangle();
     void strRevPiramidTriangle();
     void strDaimond();
+    void str2opposite();
 };
 
 void pattern::square()
@@ -119,6 +122,67 @@ void pattern::num3LftTriangle()
     }
 }
 
+void pattern::num4LftTriangle()
+{
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            if (i % 2 == 0)
+            {
+                if (j % 2 == 0)
+                {
+                    cout << "1 ";
+                }
+                else
+                    cout << "0 ";
+            }
+            else
+            {
+                if (j % 2 == 0)
+                {
+                    cout << "0 ";
+                }
+                else
+                    cout << "1 ";
+            }
+        }
+        cout << endl;
+    }
+}
+
+void pattern::num5TwoOpposite(){
+
+    int space = size * 2 - 1;
+    for (int i = 0; i < size; i++)
+    {
+        int rev = i+1; 
+
+        for (int j = 0; j < size * 2; j++)
+        {
+            //star
+            if (j <= i)
+                cout <<j+1<<" ";
+
+            //space    
+            if (j > i)
+            {
+                if (j < space)
+                {
+                    cout << "  ";
+                }
+            }
+            if(space <= j){
+                cout<<rev<<" ";
+            rev--;
+            }
+        }
+        cout << endl;
+        space = space - 1;
+    }
+}
+
+
 void pattern::strPiramidTriangle()
 {
     int c = 0;
@@ -155,8 +219,9 @@ void pattern::strRevPiramidTriangle()
     }
 }
 
-void pattern::strDaimond(){
-   int c = 0;
+void pattern::strDaimond()
+{
+    int c = 0;
     for (int i = 0; i < size; i++)
     {
         for (int space = 0; space < size - (i + 1); space++)
@@ -187,6 +252,38 @@ void pattern::strDaimond(){
     }
 }
 
+void pattern::str2opposite()
+{
+    int space = size * 2 - 1;
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size * 2; j++)
+        {
+            //star
+            if (j <= i)
+                cout << "* ";
+
+            //space    
+            if (j > i)
+            {
+                if (j < space)
+                {
+                    cout << "  ";
+                }
+            }
+
+            if(space <= j){
+                cout<<"* ";
+            }
+         
+        }
+        cout << endl;
+        space = space - 1;
+    }
+}
+
+
+
 int main()
 {
     int t = 3;
@@ -196,6 +293,6 @@ int main()
         cout << "enter size-: ";
         cin >> size;
         pattern n(size);
-        n.strDaimond();
+        n.num5TwoOpposite();
     }
 }

@@ -11,5 +11,10 @@ int main(){
     vector<int>:: iterator i = a.begin();
     for(i;i!=a.end();i++)
          cout<<*(i)<<" ";
+
+ 
+	// Write your code here
     
+   
+
 }
